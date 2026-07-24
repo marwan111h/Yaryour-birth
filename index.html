@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎂 Happy Sweet 18 Mazen</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#111,#000);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+color:white;
+}
+
+.box{
+text-align:center;
+}
+
+h1{
+font-size:42px;
+margin-bottom:30px;
+}
+
+button{
+padding:15px 35px;
+font-size:22px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+margin:15px;
+transition:.3s;
+}
+
+#yes{
+background:#00c853;
+color:white;
+}
+
+#yes:hover{
+transform:scale(1.1);
+}
+
+#no{
+background:#d50000;
+color:white;
+position:absolute;
+}
+
+#message{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+height:100vh;
+width:100%;
+background:linear-gradient(135deg,#000428,#f02119);
+animation:fade 2s;
+text-align:center;
+padding:20px;
+}
+
+#message img{
+width:300px;
+max-width:90%;
+border-radius:20px;
+box-shadow:0 0 25px white;
+margin-bottom:25px;
+}
+
+#message h1{
+font-size:55px;
+color:gold;
+text-shadow:0 0 20px gold;
+}
+
+#message h2{
+margin-top:15px;
+font-size:35px;
+}
+
+#message p{
+margin-top:20px;
+font-size:24px;
+line-height:1.8;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+.firework{
+position:absolute;
+font-size:35px;
+animation:boom 2s linear infinite;
+}
+
+@keyframes boom{
+0%{
+transform:translateY(0) scale(.5);
+opacity:1;
+}
+100%{
+transform:translateY(-700px) scale(2);
+opacity:0;
+}
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+
+<h1>🎉 مستعد تدخل مفاجأة Mazen؟</h1>
+
+<button id="yes" onclick="enterPage()">ادخل 🎂</button>
+
+<button id="no">لا 😒</button>
+
+</div>
+
+<script>
+
+const noBtn=document.getElementById("no");
+
+function moveButton(){
+noBtn.style.left=Math.random()*(window.innerWidth-120)+"px";
+noBtn.style.top=Math.random()*(window.innerHeight-60)+"px";
+}
+
+noBtn.addEventListener("mouseover",moveButton);
+
+noBtn.addEventListener("click",()=>{
+noBtn.style.display="none";
+alert("😡 مفيش اختيار لا... لازم تدخل!");
+});
+
+function createFireworks(){
+
+for(let i=0;i<60;i++){
+
+let f=document.createElement("div");
+f.className="firework";
+
+let icons=["🎆","✨","🎇","🎉","🎊","🤍"];
+
+f.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+
+f.style.left=Math.random()*100+"vw";
+f.style.top=Math.random()*100+"vh";
+f.style.animationDuration=(Math.random()*2+1)+"s";
+
+document.body.appendChild(f);
+
+}
+
+}
+
+function enterPage(){
+
+document.body.innerHTML=`
+
+<div id="message">
+
+<img src="Mazen.jpeg" alt="Mazen">
+
+<h1>🎉 Happy birthday Sweet 18 Mazen 🎉</h1>
+
+<h2>🤍 kol sana wenta tayeb 🤍</h2>
+
+<p>
+ <br><br>
+   Makrof ❤️🎂
+</p>
+
+</div>
+
+`;
+
+createFireworks();
+
+}
+
+</script>
+
+</body>
+</html>
